@@ -24,7 +24,7 @@ void pthread_once_init()
 	pthread_mutex_init(&mutex, &attr);					     // 这里是防止异步信号处理函数阻塞，即保证异步信号安全
 	pthread_mutexattr_destroy(&attr);						 
 }
-
+//实现线程安全和异步信号安全的putenv_r函数
 int putenv_r(char* string)
 {
 	int i, len;
